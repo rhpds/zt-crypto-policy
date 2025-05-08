@@ -5,8 +5,8 @@ do
     sleep 1
 done
 
-subscription-manager config --rhsm.manage_repos=1
-subscription-manager register --activationkey=${ACTIVATION_KEY} --org=12451665 --force
+#subscription-manager config --rhsm.manage_repos=1
+#subscription-manager register --activationkey=${ACTIVATION_KEY} --org=12451665 --force
 
 firewall-cmd --zone=public --add-service=https --permanent
 firewall-cmd --reload
@@ -29,9 +29,9 @@ EOF
 #step 2: make it executable
 chmod +x ~/startup-tmux.sh
 #step 3: use cron to execute 
-echo "@reboot ~/startup-tmux.sh" | crontab -
+#echo "@reboot ~/startup-tmux.sh" | crontab -
 
 #step 4: start tmux for the lab
-~/startup-tmux.sh
+#~/startup-tmux.sh
 
 echo "DONE" >> /root/post-run.log
