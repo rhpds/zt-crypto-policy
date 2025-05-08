@@ -5,19 +5,14 @@ antora:
   modules:
     - name: "01-validate"
       label: "Validate"
-      solveButton: true
     - name: "02-set"
       label: "Set"
-      solveButton: true
     - name: "03-reconcile"
       label: "Reconcile"
-      solveButton: true
     - name: "04-regenerate"
       label: "Regenerate"
-      solveButton: true
     - name: "05-start-apache"
       label: "Start Apache"
-      solveButton: true
 
 tabs:
   - name: ">_ terminal"
