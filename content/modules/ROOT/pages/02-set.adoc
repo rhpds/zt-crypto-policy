@@ -1,0 +1,33 @@
+The Chief Security Officer sends out the following e-mail:
+
+As it happens, all of these requirements can be configured and enforced
+using system-wide cryptographic policies that come with Red Hat
+Enterprise Linux. In order to comply with the new organization policy,
+you will update the system to use the *FUTURE* cryptographic policy.
+Changing to the *FUTURE* policy will configure the cryptography
+libraries and services used on the machine or by applications running on
+the machine such that they comply with the requirements set forth by the
+Chief Security Officer above.
+
+[source,bash]
+----
+update-crypto-policies --set FUTURE
+----
+
+The change will no longer permit some encryption algorithms to be used
+on the machine, SHA1 for digital signatures. Additionally, RSA based
+certificates require a public key of at least 3072 bits. The machine
+will also now only offer TLS connections at TLS 1.2 or higher.
+
+You can now verify that the new policy, FUTURE, has been applied to the
+system.
+
+[source,bash]
+----
+update-crypto-policies --show
+----
+
+If you are interested in more details about the cryptographic policies
+that ship with Red Hat Enterprise Linux 9:
+
+`+man crypto-policies+`

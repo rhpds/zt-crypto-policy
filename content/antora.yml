@@ -1,0 +1,9 @@
+---
+name: modules
+version: master
+
+asciidoc:
+  attributes:
+    lab_name: "Configuring the system-wide cryptographic policy"
+    release-version: master
+    page-pagination: true
