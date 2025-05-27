@@ -54,6 +54,9 @@ update-crypto-policies --show
 ----
 
 If you are interested in more details about the cryptographic policies
-that ship with Red Hat Enterprise Linux 9:
+that ship with Red Hat Enterprise Linux:
 
-`+man crypto-policies+`
+[source,text]
+----
+man crypto-policies
+----
