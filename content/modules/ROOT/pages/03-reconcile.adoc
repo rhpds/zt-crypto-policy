@@ -24,13 +24,19 @@ tail -2 /var/log/httpd/ssl_error_log
 NOTE: Your log date, time, process ID, or other metadata may be
 different. The important part is the message at the end of the entries.
 
-From the log data, the error causing Apache to not start is caused by
+[source,text]
+----
+[Tue May 27 14:41:42.176992 2025] [ssl:emerg] [pid 24043:tid 24043] AH02562: Failed to configure certificate 10-130-10-16.myhost:443:0 (with chain), check /etc/pki/tls/certs/localhost.crt
+[Tue May 27 14:41:42.177020 2025] [ssl:emerg] [pid 24043:tid 24043] SSL Library Error: error:0A00018F:SSL routines::ee key too small
+----
+
+From the above log data, the error causing Apache to not start is caused by
 the /etc/pki/tls/certs/localhost.crt file. Recall from the first step,
-Validate the Environment, that this file contained an RSA certificate
-that used a 2048 bit public key. However, due to the new FUTURE policy,
+*Validate the Environment*, that this file contained an RSA certificate
+that used a 2048 bit public key. However, due to the new '+FUTURE+' policy,
 RSA certificates now require a public key of at least 3072 bits.
 
-The FUTURE system-wide crypto policy is stopping Apache from starting
+The '+FUTURE+' system-wide crypto policy is stopping Apache from starting
 because running with the existing certificate, and public key, would
 violate the policy settings. In the next steps, you will resolve this
 issue.
