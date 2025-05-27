@@ -1,11 +1,10 @@
 You will need to restart the Apache service after changing the
 system-wide crypto policy so that it runs under the new policy.
 
-____
-*NOTE:* Red Hat recommends rebooting the system for all services to be
+
+TIP: Red Hat recommends rebooting the system for all services to be
 initialized with the new cryptographic policy, however, for this
 exercise you will be individually working with the Apache web service.
-____
 
 [source,bash]
 ----
@@ -22,10 +21,8 @@ additional steps in the exercise.
 tail -2 /var/log/httpd/ssl_error_log
 ----
 
-____
-*NOTE:* Your log date, time, process ID, or other metadata may be
+NOTE: Your log date, time, process ID, or other metadata may be
 different. The important part is the message at the end of the entries.
-____
 
 From the log data, the error causing Apache to not start is caused by
 the /etc/pki/tls/certs/localhost.crt file. Recall from the first step,
