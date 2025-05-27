@@ -1,4 +1,4 @@
-To comply with the system-wide cryptographic policy of FUTURE, you will
+To comply with the system-wide cryptographic policy of '+FUTURE+', you will
 need to generate a replacement SSL certificate using an RSA key of 3072
 bit length, or longer.
 
@@ -33,14 +33,12 @@ openssl x509 -in /etc/pki/tls/certs/localhost.crt -text | grep bit
 ----
 
 Now that a new SSL certificate has been created using a larger public
-key, it complies with the requirements of the FUTURE cryptographic
+key, it complies with the requirements of the '+FUTURE+' cryptographic
 policy.
 
-____
-*NOTE:* It is recommended practice to use Certificate Authority (CA)
+WARNING: It is recommended practice to use Certificate Authority (CA)
 issued certificates. If you were using a certificate from a Certificate
 Authority, you would need to generate a new Certificate Signature
 Request (csr) and submit it to your CA. When you receive the signed
 certificate from your CA, you would then position it, and update any
 configuration files needed to reference it.
-____
