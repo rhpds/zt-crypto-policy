@@ -1,4 +1,30 @@
 The Chief Security Officer sends out the following e-mail:
+[source,text]
+----
+Application and Infrastructure Administrators,
+
+I recently returned from an industry security conference, and at that
+conference, I learned of some recommended security industry practices
+that our Applications and services should be using.  Specifically, we
+should disable some less-secure encryption algorithms and enforce some
+minimum strength used by others.
+
+Those of you that have applications and services that utilize asymmetric
+encryption through RSA based certificates, your certificates should use
+at least a 3072 bit public key for their cipher.
+
+TLS connections should only be offered to clients using TLS version 1.2
+or higher.  TLS 1.0 and 1.1 should no longer be used for encrypted
+connection to services or applications.
+
+Application and services should now be configured to not use SHA1 for
+digital signatures.
+
+These changes will allow client data to transit the internet in a more
+secure fashion.
+
+-CSO
+----
 
 As it happens, all of these requirements can be configured and enforced
 using system-wide cryptographic policies that come with Red Hat
