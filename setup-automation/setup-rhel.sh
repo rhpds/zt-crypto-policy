@@ -3,6 +3,9 @@
 #subscription-manager config --rhsm.manage_repos=1
 #subscription-manager register --activationkey=${ACTIVATION_KEY} --org=12451665 --force
 
+# Install needed packages
+dnf -y install httpd
+
 firewall-cmd --zone=public --add-service=https --permanent
 firewall-cmd --reload
 
