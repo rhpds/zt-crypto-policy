@@ -1,7 +1,17 @@
 Using the provided system terminal session, validate the initial
 environment.
 
-First, verify the current system-wide cryptographic policy.
+You will need to be '+root+' for many of these tasks, so open a
+sudo session from which you can execute the rest of the lab from.
+
+[source,bash]
+----
+sudo su - 
+----
+
+Now that you have a root shell open, you can start verifying the
+initial environment.  First, verify the current setting of the 
+system-wide cryptographic policy.
 
 [source,bash]
 ----
