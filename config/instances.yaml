@@ -12,3 +12,4 @@ virtualmachines:
       - default
     packages:
       - httpd
+      - mod-ssl
