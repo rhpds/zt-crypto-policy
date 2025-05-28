@@ -33,10 +33,10 @@ different. The important part is the message at the end of the entries.
 From the above log data, the error causing Apache to not start is caused by
 the /etc/pki/tls/certs/localhost.crt file. Recall from the first step,
 *Validate the Environment*, that this file contained an RSA certificate
-that used a 2048 bit public key. However, due to the new '+FUTURE+' policy,
+that used a 2048 bit public key. However, due to the new `+FUTURE+` policy,
 RSA certificates now require a public key of at least 3072 bits.
 
-The '+FUTURE+' system-wide crypto policy is stopping Apache from starting
+The `+FUTURE+` system-wide crypto policy is stopping Apache from starting
 because running with the existing certificate, and public key, would
 violate the policy settings. In the next steps, you will resolve this
 issue.
