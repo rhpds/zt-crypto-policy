@@ -33,7 +33,7 @@ openssl x509 -in /etc/pki/tls/certs/localhost.crt -text | grep bit
 ----
 
 Now that a new SSL certificate has been created using a larger public
-key, it complies with the requirements of the '+FUTURE+' cryptographic
+key, it complies with the requirements of the `+FUTURE+` cryptographic
 policy.
 
 WARNING: It is recommended practice to use Certificate Authority (CA)
