@@ -1,4 +1,4 @@
-To comply with the system-wide cryptographic policy of '+FUTURE+', you will
+To comply with the system-wide cryptographic policy of `+FUTURE+`, you will
 need to generate a replacement SSL certificate using an RSA key of 3072
 bit length, or longer.
 
