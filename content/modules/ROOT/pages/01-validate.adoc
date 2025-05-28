@@ -1,7 +1,7 @@
 Using the provided system terminal session, validate the initial
 environment.
 
-You will need to be '+root+' for many of these tasks, so open a
+You will need to be `+root+` for many of these tasks, so open a
 sudo session from which you can execute the rest of the lab from.
 
 [source,bash]
