@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#subscription-manager config --rhsm.manage_repos=1
-#subscription-manager register --activationkey=${ACTIVATION_KEY} --org=12451665 --force
-
 firewall-cmd --zone=public --add-service=https --permanent
 firewall-cmd --reload
 
@@ -10,19 +7,19 @@ systemctl --now enable httpd
 update-crypto-policies --set DEFAULT
 
 
-#set up tmux so it has to restart itself whenever the system reboots
+#tmux shouldn't be needed, skip creating
 
 #step 1: make a script
-tee ~/startup-tmux.sh << EOF
-TMUX='' tmux new-session -d -s 'rhel-session' > /dev/null 2>&1
-tmux set -g pane-border-status top
-tmux setw -g pane-border-format ' #{pane_index} #{pane_current_command}'
-tmux set -g mouse off
-tmux set mouse off
-EOF
+#tee ~/startup-tmux.sh << EOF
+#TMUX='' tmux new-session -d -s 'rhel-session' > /dev/null 2>&1
+#tmux set -g pane-border-status top
+#tmux setw -g pane-border-format ' #{pane_index} #{pane_current_command}'
+#tmux set -g mouse off
+#tmux set mouse off
+#EOF
 
 #step 2: make it executable
-chmod +x ~/startup-tmux.sh
+#chmod +x ~/startup-tmux.sh
 #step 3: use cron to execute 
 #echo "@reboot ~/startup-tmux.sh" | crontab -
 
