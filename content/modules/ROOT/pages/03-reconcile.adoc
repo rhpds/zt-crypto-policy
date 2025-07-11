@@ -6,7 +6,7 @@ TIP: Red Hat recommends rebooting the system for all services to be
 initialized with the new cryptographic policy, however, for this
 exercise you will be individually working with the Apache web service.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 systemctl restart httpd.service
 ----
@@ -16,7 +16,7 @@ message in the SSL error log for Apache. You will further diagnose this
 using the error messages from the command below and reconcile this in
 additional steps in the exercise.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 tail -2 /var/log/httpd/ssl_error_log
 ----
