@@ -4,7 +4,7 @@ environment.
 You will need to be `+root+` for many of these tasks, so open a
 sudo session from which you can execute the rest of the lab from.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 sudo su - 
 ----
@@ -13,7 +13,7 @@ Now that you have a root shell open, you can start verifying the
 initial environment.  First, verify the current setting of the 
 system-wide cryptographic policy.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 update-crypto-policies --show
 ----
@@ -30,7 +30,7 @@ those cryptography frameworks.
 
 Verify that Apache is running on the machine.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 systemctl status httpd.service --no-pager
 ----
@@ -42,7 +42,7 @@ certificate at /etc/pki/tls/certs/localhost.crt. Verify the length of
 the RSA public key used by the automatically created, self-signed SSL
 certificate file.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 openssl x509 -in /etc/pki/tls/certs/localhost.crt -text | grep bit
 ----
@@ -55,7 +55,7 @@ encrypt the connection with the service. You will verify that a client
 web browser is utilizing the 2048 bit Public-Key certificate viewed
 above.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 openssl s_client -connect localhost:443 </dev/null 2>/dev/null | grep '^Server public key'
 ----

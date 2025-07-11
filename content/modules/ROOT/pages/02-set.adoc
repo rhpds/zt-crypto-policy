@@ -42,7 +42,7 @@ libraries and services used on the machine or by applications running on
 the machine such that they comply with the requirements set forth by the
 Chief Security Officer above.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 update-crypto-policies --set FUTURE
 ----
@@ -55,7 +55,7 @@ will also now only offer TLS connections at TLS 1.2 or higher.
 You can now verify that the new policy, `+FUTURE+`, has been applied to the
 system.
 
-[source,bash]
+[source,bash,run,subs=attributes+]
 ----
 update-crypto-policies --show
 ----
