@@ -1,16 +1,17 @@
 ---
 virtualmachines:
   - name: "rhel"
-    image: "rhel-10-0-07-09-25-3"
+    image: "rhel-10-2-eus-06-08-26"
     bootloader: efi
     memory: "4G"
     cores: 1
     image_size: "40G"
+    register_satellite: false
     tags:
       - key: "AnsibleGroup"
         value: "bastions"
     networks:
       - default
-    packages:
-      - httpd
-      - mod_ssl
+    # packages:
+    # - httpd
+    # - mod_ssl

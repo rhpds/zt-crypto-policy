@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# Unregister and register the VM
+subscription-manager clean
+subscription-manager register --activationkey=12-5-22-instruqt --org=12451665 --force
+
 firewall-cmd --zone=public --add-service=https --permanent
 firewall-cmd --reload
+
+# Install required packages
+dnf install -y httpd mod_ssl
 
 systemctl --now enable httpd
 update-crypto-policies --set DEFAULT
